@@ -1,0 +1,8 @@
+# postgres runner
+runPostgres.bat
+# postgres logfile
+archivo_de_registro
+# virtual env
+venv/
+__pycache__/
+.env
