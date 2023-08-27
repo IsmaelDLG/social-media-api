@@ -9,8 +9,7 @@ from typing import Sequence, Union
 
 from alembic import op
 from sqlalchemy import Column, Integer, String, Boolean, TIMESTAMP
-
-
+from sqlalchemy.sql.expression import text
 
 # revision identifiers, used by Alembic.
 revision: str = 'f9cb6f73604e'
@@ -22,10 +21,7 @@ depends_on: Union[str, Sequence[str], None] = None
 def upgrade() -> None:
     op.create_table("posts", 
         Column("id", Integer,primary_key=True, nullable=False),
-        Column("title", String, nullable=False),
-        Column("content", String, nullable=False),
-        Column("published", Boolean, server_default='TRUE', nullable=False),
-        Column("created_at", TIMESTAMP(timezone=True), nullable=False, server_default=text('now()')),
+        Column("title", String, nullable=False)
     )
     
 def downgrade() -> None:

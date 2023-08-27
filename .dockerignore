@@ -1,0 +1,5 @@
+runPostgres.bat
+archivo_de_registro
+venv/
+__pycache__/
+.env
